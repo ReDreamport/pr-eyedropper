@@ -1,6 +1,7 @@
 import { BrowserWindow } from "electron"
 import * as Path from "path"
 import * as URL from "url"
+import { appDebug } from "./main"
 
 let window: BrowserWindow | null = null
 
@@ -18,7 +19,7 @@ export function aCreateEyedropper() {
   const pathname = Path.join(__dirname, "../eyedropper.html")
   win.loadURL(URL.format({ pathname, protocol: "file:", slashes: true }))
 
-  win.webContents.openDevTools({ mode: "detach" })
+  if (appDebug.showDevTools) win.webContents.openDevTools({ mode: "detach" })
 
   // 当 window 被关闭，这个事件会被触发。
   win.on("closed", () => { onWindowClose() })
