@@ -1,0 +1,68 @@
+mainColor = #54B055
+
+html, body
+  height 100%
+  overflow hidden
+
+.pick
+  height = 38px
+  position fixed
+  display block
+  left 8px
+  right 8px
+  top 8px
+  background mainColor
+  border-radius 6px
+  color #fff
+  text-decoration none
+  font-size 14px
+  text-align center
+  height height
+  line-height height
+
+.color-list-parent
+  position absolute
+  top 54px
+  bottom 0
+  left 0
+  right 0
+  overflow-y auto
+
+.color-list
+  width 100%
+  overflow-x hidden
+
+.color-show
+  display flex
+  justify-content center
+  align-items center
+  padding 4px 8px
+  .rgb
+    width 140px
+  .hex
+    width 62px
+  .rgb, .hex
+    margin-left 8px
+    font-size 12px
+    font-family monospace
+    font-weight 700
+    flex 0 0 auto
+    text-align center
+    padding 4px 0
+    &:hover
+      cursor pointer
+      background rgba(#666, .5)
+
+.toast
+  position fixed
+  display inline
+  top 50%
+  left 0
+  right 0
+  margin 0 auto
+  background #888
+  color #fff
+  padding 4px 6px
+  font-size 14px
+  z-index 20
+  text-align center

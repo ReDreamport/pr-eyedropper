@@ -1,0 +1,82 @@
+{
+  "name": "pr-eyedropper",
+  "description": "PR Eyedropper",
+  "version": "0.0.2",
+  "author": "Youth Tower",
+  "main": "./assets/build/electron/main.js",
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.2",
+    "@types/lodash": "^4.14.102",
+    "@types/node": "^8.0.24",
+    "@types/tinycolor2": "^1.4.1",
+    "beepbeep": "^1.2.1",
+    "electron": "^1.8.7",
+    "electron-builder": "^20.4.0",
+    "electron-rebuild": "^1.7.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-declare": "^0.3.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-recolor-svg": "^1.0.3",
+    "gulp-run": "^1.7.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-tslint": "^8.1.3",
+    "gulp-typescript": "^4.0.1",
+    "npm-run-all": "^4.1.3",
+    "rebuild": "^0.1.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.5",
+    "robotjs": "^0.5.1",
+    "tinycolor2": "^1.4.1",
+    "simple-scrollbar": "^0.4.0"
+  },
+  "resolutions": {
+    "@types/fs-extra/@types/node": "^8.0.24"
+  },
+  "build": {
+    "appId": "com.penrush.eyedropper",
+    "productName": "PR Eyedropper",
+    "directories": {
+      "buildResources": "res"
+    },
+    "files": [
+      "./assets/**/*",
+      "node_modules/**/*"
+    ],
+    "asar": false,
+    "mac": {
+      "category": "design"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
+      "publish": {
+        "provider": "generic",
+        "url": "http://pr-public.oss-cn-shanghai.aliyuncs.com/release/win-web",
+        "channel": "latest"
+      }
+    }
+  },
+  "scripts": {
+    "run": "./node_modules/.bin/electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "i": "npm_config_proxy=http://127.0.0.1:1087 yarn install"
+  },
+  "postinstall": "electron-builder install-app-deps"
+}

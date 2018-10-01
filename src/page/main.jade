@@ -1,0 +1,22 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    title PR Eyedropper
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+
+    link(rel="stylesheet", href="../lib/normalize.css")
+    link(rel="stylesheet", href="../lib/simple-scrollbar.css")
+    link(rel="stylesheet", href="css/main.css")
+  body
+    a.pick(href="javascript:;") 取色
+    .color-list-parent
+      .color-list
+
+    .toast
+
+    script(src="../lib/runtime.min.js")
+    script(src="web/template.js")
+    script.
+      require("./web/main.js")

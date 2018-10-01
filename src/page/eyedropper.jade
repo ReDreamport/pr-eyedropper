@@ -1,0 +1,28 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    title PR Eyedropper
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+
+    link(rel="stylesheet", href="../lib/normalize.css")
+
+  body(style="width: 100%; height: 100%; overflow: hidden; use-select: none; cursor: none; background: rgba(0,0,0,0)")
+    - var screenSize = 100
+    svg(width=screenSize height=screenSize xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink")
+      circle(cx=screenSize/2, cy=screenSize/2, r=screenSize/2-2,
+        style="fill: none; stroke-width: 3; stroke: #aaa")
+      circle(cx=screenSize/2, cy=screenSize/2, r=screenSize/2-10,
+        style="fill: none; stroke-width: 3; stroke: #aaa")
+      circle#c1(cx=screenSize/2, cy=screenSize/2, r=screenSize/2-6,
+        style="fill: none; stroke-width: 9; stroke: #bbb")
+      rect(x=16, y=screenSize-18, width=screenSize-32, height=18,
+        style="fill: #bbb; fill-opacity: .6")
+      text(x=screenSize/2, y=screenSize-4,
+        style="text-anchor: middle; font-size: 12px; fill: #fff;")
+      rect(x=screenSize/2-3, y=screenSize/2-3, width=6, height=6,
+        style="stroke: #bbb; stroke-opacity: .6; stroke-width: 1; fill: none;")
+    script.
+      require("./web/eyedropper.js")
